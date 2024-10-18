@@ -65,6 +65,7 @@ function reset() {
     let reset = document.querySelector('#reset');
     reset.classList.add('animed-reset');
     velha.fill(0);
+    btns.disabled = false;
 
     jogador = 0;
 
@@ -76,10 +77,7 @@ function reset() {
 }
 document.querySelector('#reset').addEventListener('click',() => {reset()})
 
-fundo.addEventListener('click', () =>{
-    fundo.classList.add('hyde')
-})
-
 document.querySelector('#jogarNov').addEventListener('click', () =>{
+    fundo.classList.add('hyde');
     reset()
 })
