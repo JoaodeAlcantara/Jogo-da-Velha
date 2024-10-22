@@ -5,13 +5,17 @@ const velha = [
 ]
 const circle = '<div class="circle"></div>';
 const x = '<div class="x"></div>';
+const prox = document.querySelector('.proxJogada');
+const xGame = prox.querySelector('.x')
+const circleGame = prox.querySelector('.circle')
 
 const modal = document.querySelector('#mod');
 const fundo = document.querySelector('.modal');
 
+
 let jogador = 0;
 const btns = document.querySelectorAll('.item')
-btns.forEach((btn,i) => {
+btns.forEach((btn, i) => {
     btn.addEventListener('click', (e) => {
         if (velha[i] !== 0) {
             return;
@@ -19,12 +23,16 @@ btns.forEach((btn,i) => {
 
         if (jogador === 0) {
             jogador = 1;
-            btn.innerHTML = x
+            btn.innerHTML = x;
+            circleGame.classList.remove('previous')
+            xGame.classList.add('previous')
         } else {
             jogador = 0
             btn.innerHTML = circle
+            xGame.classList.remove('previous')
+            circleGame.classList.add('previous')
         }
-        
+
         if (btn.querySelector('.x')) {
             velha[i] = 'x'
 
@@ -46,7 +54,7 @@ btns.forEach((btn,i) => {
 })
 
 function checkWin() {
-    if (velha[0] && velha[0] === velha[1] && velha[0] === velha[2] || 
+    if (velha[0] && velha[0] === velha[1] && velha[0] === velha[2] ||
         velha[3] && velha[3] === velha[4] && velha[3] === velha[5] ||
         velha[6] && velha[6] === velha[7] && velha[6] === velha[8] ||
         velha[0] && velha[0] === velha[3] && velha[0] === velha[6] ||
@@ -64,9 +72,9 @@ function checkWin() {
 function reset() {
     let reset = document.querySelector('#reset');
     reset.classList.add('animed-reset');
+    circleGame.classList.add('previous');
+    xGame.classList.remove('previous');
     velha.fill(0);
-    btns.disabled = false;
-
     jogador = 0;
 
     btns.forEach(btn => btn.innerHTML = '')
@@ -75,9 +83,9 @@ function reset() {
         reset.classList.remove('animed-reset')
     }, 500)
 }
-document.querySelector('#reset').addEventListener('click',() => {reset()})
+document.querySelector('#reset').addEventListener('click', () => { reset() })
 
-document.querySelector('#jogarNov').addEventListener('click', () =>{
+document.querySelector('#jogarNov').addEventListener('click', () => {
     fundo.classList.add('hyde');
     reset()
 })
