@@ -125,11 +125,53 @@ body {
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
-
+.modal #placar{
+    position: fixed;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 3.5rem;
+    width: 8rem;
+    padding: 0;
+    border-radius: 20px;
+    background-color: white;
+}
+.modal #placar .xPoint{
+    background-color: rgb(0, 0, 255, 0.8);
+    border-radius: 20px 0px 0px 20px;
+}
+.modal #placar .circlePoint{
+    background-color: rgb(255, 0, 0, 0.8);
+    border-radius: 0 20px 20px 0;
+}
+.modal #placar .xPoint, .circlePoint{
+    text-align: center;
+    width: 50%;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+.modal #resetPlacar{
+    position: fixed;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    font-size: 1rem;
+    padding: .5rem;
+    cursor: pointer;
+}
 .modal #mod #jogarNov {
     height: 3rem;
     margin-inline: auto;
-    margin-top: 3rem;
+    margin-top: .5rem;
     padding: 5px;
     font-size: 1rem;
     border-radius: 5px;

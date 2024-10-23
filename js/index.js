@@ -6,15 +6,18 @@ const velha = [
 const circle = '<div class="circle"></div>';
 const x = '<div class="x"></div>';
 const prox = document.querySelector('.proxJogada');
-const xGame = prox.querySelector('.x')
-const circleGame = prox.querySelector('.circle')
+const xGame = prox.querySelector('.x');
+const circleGame = prox.querySelector('.circle');
+const winner = document.querySelector('.win');
+const checkWinner = document.querySelector('#check');
+const circlePoint = document.querySelector('.circlePoint')
+const xPoint = document.querySelector('.xPoint')
 
 const modal = document.querySelector('#mod');
 const fundo = document.querySelector('.modal');
 
-
 let jogador = 0;
-const btns = document.querySelectorAll('.item')
+const btns = document.querySelectorAll('.item');
 btns.forEach((btn, i) => {
     btn.addEventListener('click', (e) => {
         if (velha[i] !== 0) {
@@ -42,14 +45,24 @@ btns.forEach((btn, i) => {
         setTimeout(() => {
             if (checkWin()) {
                 fundo.classList.remove('hyde');
-                document.querySelector('#check').innerHTML = 'Ganhou';
-                document.querySelector('.win').innerHTML = jogador === 1 ? x : circle;
+                checkWinner.innerHTML = 'Ganhou';
+                if(jogador===1){
+                    winner.innerHTML = x
+                    setTimeout(()=>{
+                        placar()
+                    }, 200)
+                } else{
+                    winner.innerHTML = circle
+                    setTimeout(()=>{
+                        placar()
+                    }, 200)
+                }
             } else if (velha.every(i => i !== 0)) {
                 fundo.classList.remove('hyde');
-                document.querySelector('#check').innerHTML = 'Empate';
-                document.querySelector('.win').innerHTML = '<img src="velha.png" alt="velha" width="150px">'
+                checkWinner.innerHTML = 'Empate';
+                winner.innerHTML = '<img src="velha.png" alt="velha" width="150px">'
             }
-        }, 200)
+        }, 100)
     })
 })
 
@@ -88,4 +101,17 @@ document.querySelector('#reset').addEventListener('click', () => { reset() })
 document.querySelector('#jogarNov').addEventListener('click', () => {
     fundo.classList.add('hyde');
     reset()
+})
+
+function placar(){
+    if(jogador===1){
+        xPoint.innerHTML++;
+    } else{
+        circlePoint.innerHTML++;
+    }
+}
+
+document.querySelector('#resetPlacar').addEventListener('click', ()=>{
+    xPoint.innerHTML=0;
+    circlePoint.innerHTML=0;
 })
