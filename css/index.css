@@ -179,12 +179,28 @@ body {
     border: none;
     background-color: dodgerblue;
 }
-
+@media only screen and (max-width: 780px){
+    .modal #placar{
+        left: 10%;
+    }
+    .modal #resetPlacar{
+        left: 10%;
+        top: 3%;
+    }
+}
 @media only screen and (max-width: 500px) {
     .container {
         align-items: center;
         width: 400px;
         gap: 5px;
+    }
+    .modal #resetPlacar{
+        top: 14%;
+        left: 50%;
+    }
+    .modal #placar{
+        left: 50%;
+        top: 21%;
     }
 }
 
@@ -193,6 +209,15 @@ body {
         width: 300px;
         height: 400px;
         gap: 5px;
+    }
+
+    .modal #resetPlacar{
+        top: 14%;
+        left: 50%;
+    }
+    .modal #placar{
+        left: 50%;
+        top: 21%;
     }
 
     .x,
