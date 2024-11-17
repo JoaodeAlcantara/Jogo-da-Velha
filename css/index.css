@@ -12,17 +12,20 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.proxJogada{
+
+.proxJogada {
     width: 300px;
     height: 100px;
     display: flex;
     padding-top: 5px;
 }
-.proxJogada .previous{
+
+.proxJogada .previous {
     opacity: 0.3;
     transform: scale(0.7);
     transition: 0.3s;
 }
+
 .container {
     background-color: black;
     width: 500px;
@@ -125,7 +128,8 @@ body {
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
-.modal #placar{
+
+.modal #placar {
     position: fixed;
     top: 22%;
     left: 50%;
@@ -137,22 +141,27 @@ body {
     border-radius: 20px;
     background-color: white;
 }
-.modal #placar .xPoint{
+
+.modal #placar .xPoint {
     background-color: rgb(0, 0, 255, 0.8);
     border-radius: 20px 0px 0px 20px;
 }
-.modal #placar .circlePoint{
+
+.modal #placar .circlePoint {
     background-color: rgb(255, 0, 0, 0.8);
     border-radius: 0 20px 20px 0;
 }
-.modal #placar .xPoint, .circlePoint{
+
+.modal #placar .xPoint,
+.circlePoint {
     text-align: center;
     width: 50%;
     font-size: 3rem;
     color: white;
     font-weight: bold;
 }
-.modal #resetPlacar{
+
+.modal #resetPlacar {
     position: fixed;
     top: 16%;
     left: 50%;
@@ -168,6 +177,7 @@ body {
     padding: .5rem;
     cursor: pointer;
 }
+
 .modal #mod #jogarNov {
     height: 3rem;
     margin-inline: auto;
@@ -179,26 +189,31 @@ body {
     border: none;
     background-color: dodgerblue;
 }
-@media only screen and (max-width: 780px){
-    .modal #placar{
+
+@media only screen and (max-width: 780px) {
+    .modal #placar {
         left: 10%;
     }
-    .modal #resetPlacar{
+
+    .modal #resetPlacar {
         left: 10%;
         top: 3%;
     }
 }
+
 @media only screen and (max-width: 500px) {
     .container {
         align-items: center;
         width: 400px;
         gap: 5px;
     }
-    .modal #resetPlacar{
+
+    .modal #resetPlacar {
         top: 14%;
         left: 50%;
     }
-    .modal #placar{
+
+    .modal #placar {
         left: 50%;
         top: 21%;
     }
@@ -211,11 +226,12 @@ body {
         gap: 5px;
     }
 
-    .modal #resetPlacar{
+    .modal #resetPlacar {
         top: 14%;
         left: 50%;
     }
-    .modal #placar{
+
+    .modal #placar {
         left: 50%;
         top: 21%;
     }
