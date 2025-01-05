@@ -91,22 +91,17 @@ function reset() {
     jogador = 0;
 
     btns.forEach(btn => btn.innerHTML = '')
-    btns.forEach(btn => btn.style.pointerEvents = 'all');
 
     setTimeout(() => {
         reset.classList.remove('animed-reset')
     }, 500)
 }
+
 document.querySelector('#reset').addEventListener('click', () => { reset() })
 
 document.querySelector('#jogarNov').addEventListener('click', () => {
     fundo.classList.add('hyde');
     reset()
-})
-
-fundo.addEventListener('click', ()=>{
-    fundo.classList.add('hyde');
-    btns.forEach(btn => btn.style.pointerEvents = 'none');
 })
 
 function placar(){
